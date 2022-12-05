@@ -1,11 +1,12 @@
 // 'fs' is a built-in module name
 // the node:fs module enables interacting with the file system
 // require the fs module will return an object in which there are lots of functions that we can use
-// store this object into the fs variable
+// require the built-in fs, http, and url modules:
 const fs = require("fs");
-// require the built-in http modules:
 const http = require("http");
 const url = require("url");
+// require my own modules:
+const replaceTemplate = require("./modules/repalceTemplate");
 
 //////////////// SERVER ///////////////////
 
@@ -24,23 +25,6 @@ const tempProduct = fs.readFileSync(
 );
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObj = JSON.parse(data); // convert text into JS object
-
-// helper function:
-const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
-  // mutate the output after it has been created:
-  output = output.replace(/{%ID%}/g, product.id);
-  output = output.replace(/{%IMAGE%}/g, product.image);
-  output = output.replace(/{%FROM%}/g, product.from);
-  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
-  output = output.replace(/{%QUANTITY%}/g, product.quantity);
-  output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%DESCRIPTION%}/g, product.description);
-  if (!product.organic)
-    // .not-organic {display: none;} in template-product.html:
-    output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
-  return output;
-};
 
 // created server and passed in a callback function that is executed each time that a new request hits the server:
 const server = http.createServer((req, res) => {
