@@ -12,7 +12,7 @@
 
 <br>
 
-### Key features :
+### Key features:
 
 - multiple choices of farm items
 - vegetable details
@@ -20,9 +20,10 @@
 
 <br>
 
-### To run this project :
+### Project setup:
 
 - repo: https://github.com/qmeng222/Farm-Fresh-to-You.git
+- set up a new npm package: $ npm init, so package.json file is created
 - install project dependencies: $ npm install
 - start the app: $ npm start
 - deployed version (feel free to visit): https://farm-fresh-to-you.herokuapp.com/

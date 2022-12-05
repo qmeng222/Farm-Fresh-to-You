@@ -1,0 +1,19 @@
+{
+  "name": "farm-fresh-to-you",
+  "version": "1.0.0",
+  "description": "one-stop shop for local fruits & veggies built on Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qmeng222/Farm-Fresh-to-You.git"
+  },
+  "author": "Qingying Meng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qmeng222/Farm-Fresh-to-You/issues"
+  },
+  "homepage": "https://github.com/qmeng222/Farm-Fresh-to-You#readme"
+}
