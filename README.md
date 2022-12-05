@@ -1,9 +1,10 @@
-## Farm Fresh to You - Farmer's market online using Node.js
+## Farm Fresh to You - one-stop shop for local fruits & veggies built on Node.js
 
 <br>
 
 ### Tech stack:
 
+- JavaScript
 - html
 - css
 - Node.js

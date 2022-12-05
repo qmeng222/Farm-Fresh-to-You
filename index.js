@@ -27,7 +27,7 @@ const dataObj = JSON.parse(data); // convert text into JS object
 
 // helper function:
 const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%PRODUCT_NAME%}/g, product.productName);
+  let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
   // mutate the output after it has been created:
   output = output.replace(/{%ID%}/g, product.id);
   output = output.replace(/{%IMAGE%}/g, product.image);
@@ -44,10 +44,16 @@ const replaceTemplate = (temp, product) => {
 
 // created server and passed in a callback function that is executed each time that a new request hits the server:
 const server = http.createServer((req, res) => {
-  const pathName = req.url;
+  // console.log("REQ.URL:", req.url);
+  // // /product?id=0
+  // console.log("URL:", url);
+  // // {Url: [Function: Url], parse: [Function: urlParse], ...}
+  // console.log(url.parse(req.url, true));
+  // // Url {..., query: [Object: null prototype] { id: '0' }, pathname: '/product', ...}
+  const { query, pathname } = url.parse(req.url, true);
 
   // Overview:
-  if (pathName === "/" || pathName === "/overview") {
+  if (pathname === "/" || pathname === "/overview") {
     res.writeHead(200, {
       "Content-type": "text/html",
     });
@@ -58,11 +64,17 @@ const server = http.createServer((req, res) => {
     res.end(output);
 
     // Product:
-  } else if (pathName === "/product") {
-    res.end("This is PRODUCT");
+  } else if (pathname === "/product") {
+    // console.log(query, pathname);
+    // // [Object: null prototype] { id: '0' } /product
+    // console.log(query.id);
+    // // 0
+    const product = dataObj[query.id]; // eg: dataObj[0] --> object avocado
+    const output = replaceTemplate(tempProduct, product);
+    res.end(output);
 
     // API:
-  } else if (pathName === "/api") {
+  } else if (pathname === "/api") {
     // specifying that we're sending back application/json, so that the browser knows exactly what to expect:
     res.writeHead(200, { "Content-type": "application/json" });
     res.end(data);
