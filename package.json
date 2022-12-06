@@ -4,7 +4,7 @@
   "description": "one-stop shop for local fruits & veggies built on Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/qmeng222/Farm-Fresh-to-You/issues"
   },
-  "homepage": "https://github.com/qmeng222/Farm-Fresh-to-You#readme"
+  "homepage": "https://github.com/qmeng222/Farm-Fresh-to-You#readme",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
