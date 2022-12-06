@@ -35,5 +35,6 @@
   npm run start      // if installed locally
   nodemon index.js   // if installed globally
   ```
-- start the app: $ npm start
+- install express: $ npm i express
+
 - deployed version (feel free to visit): https://farm-fresh-to-you.herokuapp.com/
