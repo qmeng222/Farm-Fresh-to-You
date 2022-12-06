@@ -7,6 +7,8 @@ const http = require("http");
 const url = require("url");
 // require my own modules:
 const replaceTemplate = require("./modules/repalceTemplate");
+// require 3rd party modules under node_modules:
+const slugify = require("slugify");
 
 //////////////// SERVER ///////////////////
 
@@ -23,8 +25,20 @@ const tempProduct = fs.readFileSync(
   `${__dirname}/templates/template-product.html`,
   "utf-8"
 );
+
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObj = JSON.parse(data); // convert text into JS object
+// // replace spaces with replacement character, defaults to `-`:
+// console.log(slugify("Fresh Avocados", { lower: true }));  // fresh-avocados
+const slugs = dataObj.map((el) => slugify(el.productName, { lower: true }));
+console.log(slugs);
+// [
+//   'fresh-avocados',
+//   'goat-and-sheep-cheese',
+//   'apollo-broccoli',
+//   'baby-carrots',
+//   'sweet-corncobs'
+// ]
 
 // created server and passed in a callback function that is executed each time that a new request hits the server:
 const server = http.createServer((req, res) => {
