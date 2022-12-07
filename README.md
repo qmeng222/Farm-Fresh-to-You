@@ -7,7 +7,7 @@
 - JavaScript
 - html
 - css
-- Node.js
+- Node.js (as the dynamic web server)
 - Express.js
 
 <br>
@@ -15,8 +15,11 @@
 ### Key features:
 
 - multiple choices of farm items
-- vegetable details
-- online payments
+- product details
+- checkout option
+
+  ![GIF](/images/farm-fresh-to-you_home-page.png)
+  ![GIF](/images/farm-fresh-to-you_product-detail.png)
 
 <br>
 
@@ -37,4 +40,14 @@
   ```
 - install express: $ npm i express
 
-- deployed version (feel free to visit): https://farm-fresh-to-you.herokuapp.com/
+<br>
+
+### To run ths project:
+
+1. $ git clone https://github.com/qmeng222/Farm-Fresh-to-You.git
+2. install project dependencies: $ npm install
+3. start nodemon: $ npm run start
+4. run root file: $ nodemon index.js or $ node index.js
+5. refresh browser:
+   - home page: http://127.0.0.1:8000/ or http://127.0.0.1:8000/overview
+   - product details example: http://127.0.0.1:8000/product?id=0
