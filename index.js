@@ -1,13 +1,13 @@
 // 'fs' is a built-in module name
 // the node:fs module enables interacting with the file system
 // require the fs module will return an object in which there are lots of functions that we can use
-// require the built-in fs, http, and url modules:
+// require the built-in core modules:
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
-// require my own modules:
+// require developer modules:
 const replaceTemplate = require("./modules/repalceTemplate");
-// require 3rd party modules under node_modules:
+// require 3rd-party modules (from NPM):
 const slugify = require("slugify");
 
 //////////////// SERVER ///////////////////
