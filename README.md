@@ -12,20 +12,19 @@
 
 <br>
 
-### Key features:
+### Overview & key features:
+
+![Overview GIF](/images/farm-fresh-to-you_overview.gif)
 
 - multiple choices of farm items
 - product details
 - checkout option
 
-  ![GIF](/images/farm-fresh-to-you_home-page.png)
-  ![GIF](/images/farm-fresh-to-you_product-detail.png)
-
 <br>
 
 ### Project setup:
 
-- repo: https://github.com/qmeng222/Farm-Fresh-to-You.git
+- repo: https://github.com/qmeng222/Tours-and-Tickets.git
 - set up a new npm package: $ npm init, package.json file is created
 - install project dependencies: $ npm install <package-name1> <package-name2> ..., now package.json file is updated with these dependencies
   ```
